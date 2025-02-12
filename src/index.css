@@ -1,0 +1,52 @@
+/* Global reset */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('/heart_background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Music button */
+  .music-button {
+    position: fixed;
+    top: 90px;
+    right: 50px;  /* Default positioning on larger screens */
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  /* Hover effect for music button */
+  .music-button:hover {
+    background-color: #e91e63;
+  }
+  
+  /* Responsive adjustments for medium screens (tablets and below) */
+  @media (max-width: 768px) {
+    .music-button {
+      right: 30px;  /* Adjust button to be closer to the edge on tablets */
+      top: 70px;  /* Reduce distance from the top */
+      font-size: 0.9em;  /* Slightly smaller text size */
+      padding: 8px 16px;  /* Smaller padding */
+    }
+  }
+  
+  /* Responsive adjustments for small screens (phones) */
+  @media (max-width: 480px) {
+    .music-button {
+      right: 20px;  /* Move the button further to the right on small screens */
+      top: 60px;  /* Further reduce distance from the top */
+      font-size: 0.8em;  /* Smaller font size for phones */
+      padding: 6px 12px;  /* Even smaller padding */
+    }
+  }
+  

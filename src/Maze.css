@@ -1,0 +1,99 @@
+/* Global reset */
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('/heart_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Maze container */
+.maze-container {
+  text-align: center;
+  color: red;
+}
+
+/* Maze grid */
+.maze {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Maze row */
+.maze-row {
+  display: flex;
+}
+
+/* Maze cell */
+.maze-cell {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Wall cell styling */
+.maze-cell.wall {
+  background-color: rgba(255, 204, 203, 0.8);
+  cursor: not-allowed;
+}
+
+/* Player cell styling */
+.maze-cell.player {
+  background-image: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXJ0Z2duOGY3eWxnOXcyNnF2aXVmbjR3azJtNDMxaWZrbnF6Y3hpNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/h5EzuVkBRuDqMVDOba/giphy.gif'); /* Direct link to your GIF */
+  background-size: cover; /* Ensure the GIF covers the cell */
+  background-position: center; /* Center the GIF */
+  background-repeat: no-repeat; /* Prevent the GIF from repeating */
+  background-color: transparent; /* Remove the background color */
+}
+
+/* Heart cell styling */
+.maze-cell.broken-heart,
+.maze-cell.full-heart {
+  background-color: rgba(249, 227, 227, 0.8);
+}
+
+.maze-cell img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .maze-cell {
+    width: 40px;   /* Smaller cells for tablets */
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Make the cells even smaller on small screens */
+  .maze-cell {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Adjust the maze container width */
+  .maze-container {
+    padding: 5px;
+  }
+
+  /* Adjust header text size */
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  /* Adjust step message font size */
+  p {
+    font-size: 1.2rem;
+  }
+}
