@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 
-function BackgroundAudio() {
+function Audio() {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -28,4 +28,4 @@ function BackgroundAudio() {
   );
 }
 
-export default BackgroundAudio;
+export default Audio;
