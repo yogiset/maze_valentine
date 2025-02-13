@@ -83,12 +83,26 @@ function Maze() {
   
 
   const restartGame = () => {
-    setPlayerPosition(findCenter());
-    setBrokenHeartPosition({ x: 7, y: 0 }); // Reset to initial position
+    // Clear the old "Game Over" (2) position
+    if (brokenHeartPosition) {
+      maze[brokenHeartPosition.y][brokenHeartPosition.x] = 0;
+    }
+  
+    // Reset the player's position
+    const newPlayerPosition = findCenter();
+    setPlayerPosition(newPlayerPosition);
+  
+    // Reset the broken heart position
+    const initialBrokenHeartPosition = { x: 7, y: 0 };
+    setBrokenHeartPosition(initialBrokenHeartPosition);
+    maze[initialBrokenHeartPosition.y][initialBrokenHeartPosition.x] = 2; // Set "Game Over" (2) here
+  
+    // Reset move count and game state
     setMoveCount(0);
     setGameOver(false);
     setValentineDay(false);
   };
+  
 
   if (gameOver) {
     return <GameOver onRestart={restartGame} />;
