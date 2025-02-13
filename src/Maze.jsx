@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './Maze.css';
 import GameOver from './GameOver';
 import ValentineDay from './ValentineDay';
+import Footer from "./Footer";
 
 const maze = [
   [1, 3, 1, 1, 1, 1, 1, 2, 1],
@@ -115,6 +116,8 @@ function Maze() {
         ))}
       </div>
       <p>Maju selangkah demi selangkah!</p>
+
+      <Footer />
     </div>
   );
 }

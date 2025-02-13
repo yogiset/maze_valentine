@@ -29,6 +29,65 @@ body {
   .music-button:hover {
     background-color: #e91e63;
   }
+
+  .game-over-button {
+    background-color: #ff4d6d; /* Cute pinkish-red */
+    color: white;
+    font-size: 1.5em;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect */
+.game-over-button:hover {
+    background-color: #ff1e4d;
+    transform: scale(1.1);
+}
+
+/* Button click effect */
+.game-over-button:active {
+    transform: scale(0.95);
+}
+
+/* Add a heart emoji inside the button */
+.game-over-button::before {
+    content: "❤️ ";
+}
+
+  /* Footer Styling */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(45deg, #ff6b81, #ffb6c1); /* Young red to pink */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Ensures footer is above background */
+}
+
+/* Responsive Footer Adjustments */
+@media (max-width: 768px) {
+  .footer {
+    font-size: 12px;
+    padding: 8px 0;
+  }
+}
+
   
   /* Responsive adjustments for medium screens (tablets and below) */
   @media (max-width: 768px) {

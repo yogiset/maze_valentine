@@ -1,0 +1,22 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(45deg, #ff6b81, #ffb6c1); /* Gradient from young red to soft pink */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .footer {
+      font-size: 12px; /* Adjust font size for smaller screens */
+      padding: 8px 0;
+    }
+  }
+  

@@ -1,3 +1,5 @@
+import Footer from "./Footer";
+
 function GameOver({ onRestart }) {
     return (
       <div className="body_style">
@@ -11,6 +13,7 @@ function GameOver({ onRestart }) {
               src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjhteWRud21vbGZ4MWNuNDNqM2ZhbDh5ZWZjMGY1YnY3czk5OWJqMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/dyAJQMYDdd8oHNgOUb/giphy.gif"
               alt="Happy GIF"
             />
+            <Footer />
           </div>
         </div>
       </div>
