@@ -40,39 +40,47 @@ function Maze() {
   const handleCellClick = (x, y) => {
     const { x: playerX, y: playerY } = playerPosition;
     const cellValue = maze[y][x];
-
+  
     // Check if the clicked cell is adjacent
-    const isAdjacent = 
-      (Math.abs(playerX - x) === 1 && playerY === y) || // Left/Right
-      (Math.abs(playerY - y) === 1 && playerX === x);   // Up/Down
-
+    const isAdjacent =
+      (Math.abs(playerX - x) === 1 && playerY === y) ||
+      (Math.abs(playerY - y) === 1 && playerX === x);
+  
     if (isAdjacent && cellValue !== 1) {
+      // ✅ First, update the player's position
       setPlayerPosition({ x, y });
-
-      // Check if the player is one step away from the broken heart
-      const isNearBrokenHeart = 
-        (Math.abs(playerX - brokenHeartPosition.x) === 1 && playerY === brokenHeartPosition.y) || // Left/Right
-        (Math.abs(playerY - brokenHeartPosition.y) === 1 && playerX === brokenHeartPosition.x);   // Up/Down
-
-      if (isNearBrokenHeart && moveCount < 3) {
-        // Move the broken heart to a new random position
-        let newX, newY;
-        do {
-          newX = Math.floor(Math.random() * maze[0].length);
-          newY = Math.floor(Math.random() * maze.length);
-        } while (maze[newY][newX] !== 0 || (newX === x && newY === y));
-
-        setBrokenHeartPosition({ x: newX, y: newY });
-        setMoveCount(moveCount + 1);
-      }
-
+  
+      // ✅ Then, check for broken heart movement
+      setTimeout(() => {
+        const isNearBrokenHeart =
+          (Math.abs(x - brokenHeartPosition.x) === 1 && y === brokenHeartPosition.y) || 
+          (Math.abs(y - brokenHeartPosition.y) === 1 && x === brokenHeartPosition.x);
+  
+        if (isNearBrokenHeart && moveCount < 3) {
+          let newX, newY;
+          do {
+            newX = Math.floor(Math.random() * maze[0].length);
+            newY = Math.floor(Math.random() * maze.length);
+          } while (maze[newY][newX] !== 0 || (newX === x && newY === y));
+  
+          // ✅ Move the "Game Over" (2) along with the broken heart
+          maze[brokenHeartPosition.y][brokenHeartPosition.x] = 0; // Clear old position
+          maze[newY][newX] = 2; // Set new "Game Over" position
+  
+          setBrokenHeartPosition({ x: newX, y: newY });
+          setMoveCount((prev) => prev + 1);
+        }
+      }, 50);
+  
+      // Check win/loss conditions
       if (cellValue === 2) {
         setGameOver(true);
       } else if (cellValue === 3) {
         setValentineDay(true);
       }
     }
-  };
+  };  
+  
 
   const restartGame = () => {
     setPlayerPosition(findCenter());
