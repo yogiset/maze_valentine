@@ -4,7 +4,7 @@ function ValentineDay() {
     return (
         <div className="body_style">
         <div className="container">
-          <h1 className="header_text">I Miss You Nindi ❤️</h1>
+          <h1 className="header_text">I Miss You Nindia Kusuma Putri ❤️</h1>
           <div className="gif_container">
             <img
               src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWpmbGN1ZGZkOXRrZTQ1a3lwYzV6bm8wd2lmZWpmNzBtYjRseHlpaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/KD8Re4dBBtXI4Z09Ct/giphy.gif"
